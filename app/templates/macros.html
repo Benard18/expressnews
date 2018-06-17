@@ -1,0 +1,43 @@
+{% macro displayNewsList(news_list) %}
+
+    {% for news in news_list %}
+    <div class="font col-md-4" style="list-style-type:none">
+        <li><a href="{{news.url}}" style="color:#C04000;"><h1>{{ news.name}}</h1></a></li>
+        <li>{{news.description}}</li>
+        <a href=/templates/article/{{news.id}} style="font-size: 20px;">Click here to article</a>
+    </div>
+    {% endfor %}
+
+{% endmacro %}
+{% macro displayHeadlinesList(headlines_list) %}
+
+    {% for head in headlines_list %}
+    <div class="container-fluid container col-md-6 font" style="list-style-type:none">
+    	<div>
+        <li><h1 "><a href="{{head.url}}"style="color: #C04000;">{{ head.title}}</a></h1></li>
+        <img src="{{head.image_url}}" style="width:500px;height: 200px;">
+        <li>{{head.description}}</li>
+    </div>
+   </div>
+    {% endfor %}
+
+{% endmacro %}
+
+{% macro displayArticles(articles_list) %}
+
+        {% for article in articles_list %}
+            <div class="row font">
+                <div class="col-md-6" ><img src="{{article.image_url}}" style="display: inline-block; height:300px;width: 600px; ">
+                    
+                </div>
+                <div class="col-md-6 ">
+                    <h3 style="color:#C04000">{{article.title}}</h3><h5>by {{article.author}}</h5>
+        
+                    <p class="description">{{article.description}} <a href="{{article.url}}">Read more...</a></p>
+                    <p class="timestamp"><b>Published on {{article.publish_time}}</b></p>
+        
+                </div>
+            </div>
+        {% endfor %}
+
+{% endmacro %}

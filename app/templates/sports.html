@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+<!-- Sports News section  -->
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}">
+{% endblock%}
+ {% block content %}
+       <div class="font">
+        <h3 style="font-size: 100px;text-align: center;">Sports NewsFeeds</h3>
+         <ul>
+            {{macro.displayNewsList(sports)}}
+        </ul>
+        {%endblock%}
+    </div>
