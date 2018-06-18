@@ -79,7 +79,7 @@ def get_articles(id):
     '''
   
     get_articles_details_url = article_base_url.format(id, api_key)
-
+    print(get_articles_details_url)
     with urllib.request.urlopen(get_articles_details_url) as url:
         articles_details_data = url.read()
         articles_details_response = json.loads(articles_details_data)
